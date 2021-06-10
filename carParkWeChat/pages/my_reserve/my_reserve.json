@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "车位预约",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+}

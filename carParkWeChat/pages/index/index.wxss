@@ -1,0 +1,170 @@
+.search{  
+  width: 80%;  
+}  
+.search_arr {  
+  border: 1px solid #d0d0d0;  
+  border-radius: 10rpx;  
+  margin-left: 20rpx;  
+}  
+.search_arr input{  
+  margin-left: 60rpx;  
+  height: 60rpx;  
+  border-radius: 5px;  
+}  
+.bc_text {  
+  line-height: 68rpx;  
+  height: 68rpx;  
+  margin-top: 34rpx;  
+}  
+  
+.sousuo {  
+  margin-left: 15rpx;  
+  width: 15%;  
+  line-height: 150%;  
+  text-align: center;  
+  border: 1px solid #d0d0d0;  
+  border-radius: 10rpx;  
+}  
+.page_row{
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+.page_row{  
+  display: flex;  
+  flex-direction: row  
+}  
+.searchcion {  
+  margin: 10rpx 10rpx 10rpx 10rpx;  
+  position: absolute;  
+  left:25rpx;  
+  z-index: 2;  
+  width: 20px;  
+  height: 20px;  
+  text-align: center;  
+} 
+.slide-image {
+  width:100%;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border-top: 1rpx solid #f0f0f0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.itemButton {
+  border: 1rpx solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  width: 250rpx;
+  height: 250rpx;
+  padding:30rpx;
+}
+.notice,
+.post {
+  border-left:none;
+}
+.suggest,
+.more-and-more {
+  border-right: none;
+}
+.icon-gonggao{
+  color:#deaf39;
+}
+.icon-weixiu{
+  color: #486795;
+}
+.icon-xiaoyouju{
+  color: #047058;
+}
+.icon-jiaofei{
+  color: #8db3da;
+}
+.icon-faqitousu {
+  color: #b95756;
+}
+.icon-fangke{
+  color: #84858a;
+}
+.icon-gengduo{
+  color: #f0f0f0;
+}
+
+
+.notice {
+  display: flex;
+  flex-direction: column;
+  background-color:white;
+  margin:0 0 30rpx 0;
+
+}
+.notice-head {
+display: flex;
+margin: 20rpx 0; 
+}
+
+.userinfo-avatar {
+width: 80rpx;
+height: 80rpx;
+margin: 0 20rpx ;
+border-radius: 50%;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between; 
+}
+.userinfo-nickname {
+font-size: 32rpx;
+}
+.date {
+  font-size: 28rpx;
+  color: #aaa
+}
+.notice-body {
+  height: 400rpx;
+  margin: 0 20rpx 20rpx 20rpx;
+  overflow: hidden;
+  position: relative;
+}
+.notice-body image {
+  width: 100%;  
+}
+.notice-body text {
+  color: white;
+  width: 100%;
+  padding: 20rpx 10rpx;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5)
+}
+.message-title {
+  padding:40rpx;
+  font-size:48rpx;
+  background-color: #54afc5;
+  line-height:1.5em;
+}
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+ }
+.message-title2 {
+  padding:30rpx;
+  font-size:35rpx;
+  line-height:1.5em;
+}
+
+.message-date-author {
+  display: flex;
+  padding-left: 40rpx;
+}
+.message-date,
+.message-author {
+  font-size: 30rpx;
+  color: #aaa;
+  padding-right: 30rpx;
+}

@@ -1,0 +1,27 @@
+<view class="content">
+  <view class="screen-container">
+    <view class="screen"> {{screenData}}车库(选位) </view>
+    <view class="screen"> (*注意:橘黄色表示已被占用) </view>
+  </view>
+  <block wx:for="{{num}}" wx:for-index="count">
+    <view class="btnGroup">
+    <view class="{{ !boolArry[count*4] ? 'item blue':'item orange'}}" bindtap="clickButton" data-num="{{count*4+1}}" id="{{count*4+1}}">{{count*4+1}}</view>
+    <view class="{{ !boolArry[count*4+1] ? 'item blue':'item orange'}}" bindtap="clickButton" data-num="{{count*4+2}}" id="{{count*4+2}}">{{count*4+2}}</view>
+    <view class="{{ !boolArry[count*4+2] ? 'item blue':'item orange'}}" bindtap="clickButton" data-num="{{count*4+3}}" id="{{count*4+3}}">{{count*4+3}}</view>
+    <view class="{{ !boolArry[count*4+3] ? 'item blue':'item orange'}}" bindtap="clickButton" data-num="{{count*4+4}}" id="{{count*4+4}}">{{count*4+4}}</view>
+   
+  </view>
+  </block>
+  <view class="btnGroup">
+    <view wx:for="{{sheny}}" wx:for-index="count" class="{{ !boolArry[count*4] ? 'item blue':'item orange'}}" bindtap="clickButton" data-num="{{num*4+count+1}}" id="{{num*4+count+1}}">{{num*4+count+1}}</view>
+  </view>
+  <view class="screen-container">
+    <block wx:if="{{onSelected.length != 0}}">
+      <view class="screen">已选车位:{{onSelected}} </view>
+      </block>
+      <block wx:else>
+        <view class="screen"> {{locationData}} </view>
+      </block>
+      <button form-type="submit" bindtap="addButton" data-id="{{id}}"  data-loca="{{onSelected}}"> 提交确认 </button>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.mapper.RentMapper">
+    <resultMap type="com.park.pojo.Rent" id="RentMap">
+        <id property="id" column="id"/>
+        <result property="parkStartTime" column="parkStartTime"/>
+        <result property="parkEndTime" column="parkEndTime"/>
+        <result property="parkAddress" column="parkAddress"/>
+        <result property="parkNum" column="parkNum"/>
+		<result property="parkRentMoney" column="parkRentMoney"/>
+        <result property="parkUserName" column="parkUserName"/>
+        <result property="parkPhone" column="parkPhone"/>
+    </resultMap>
+
+
+
+    <select id="findAllRent" resultType="com.park.pojo.Rent">
+      select * from rent
+    </select>
+
+    <select id="findAllRentByPage" resultType="com.park.pojo.Rent">
+      select * from rent limit #{satrt},#{end}
+    </select>
+
+    <select id="findRentById" resultType="com.park.pojo.Rent">
+      select id,parkStartTime,uid,parkEndTime,parkAddress,parkNum,parkRentMoney,parkUserName,parkPhone,parkYz,park_img from rent where id=#{id}
+    </select>
+
+    <insert id="insertRent" >
+      insert into rent (parkStartTime,uid,parkEndTime,parkAddress,parkNum,parkRentMoney,parkUserName,parkPhone,parkYz,park_img)
+      values (#{parkStartTime},#{uid},#{parkEndTime},#{parkAddress},#{parkNum},#{parkRentMoney},#{parkUserName},#{parkPhone},#{parkYz},#{park_img})
+    </insert>
+
+    <delete id="deleteRents" >
+      delete from rent where id = #{id}
+    </delete>
+    <select id="queryAll"  resultMap="RentMap">
+		select id,parkStartTime,parkEndTime,parkAddress,parkNum,parkRentMoney,parkUserName,parkPhone from rent
+	</select>
+
+    <select id="findRentByUid" resultType="com.park.pojo.Rent">
+      select id,parkStartTime,uid,parkEndTime,parkAddress,parkNum,parkRentMoney,parkUserName,parkPhone,parkYz,park_img from rent where uid=#{uid}
+    </select>
+
+
+
+</mapper>

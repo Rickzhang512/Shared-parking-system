@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "我的停车记录",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+}

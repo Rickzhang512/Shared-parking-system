@@ -1,0 +1,34 @@
+<scroll-view  scroll-y="true"  class="page-body" >
+  <!--list-->
+  
+  <view class="nav_section">
+        <block wx:for="{{list}}" wx:if="{{list.length != 0}}">
+            <view class="nav_section_items" >
+                <!--content-->
+                <view class="section_cont">
+                    <view class="section_cont_sub">
+                        <text>车库名称：{{item.parkName}}</text>
+                    </view>
+                    <view class="section_cont_price">
+                    车库地址：{{item.location}}
+                    </view>
+                    <view class="word">
+                        <text>开始时间：{{item.inTime}}</text>
+                    </view>
+                    <view class="word">
+                        <text>结束时间：{{item.outTime}}</text>
+                    </view>
+                    <view class="word">
+                        <text>停车费用：¥{{item.charge}}</text>
+                    </view>
+                    <view class="word">
+                        <text>缴费状态：已缴费</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block wx:if="{{list.length == 0}}">
+            <view class="screen"> 暂无记录 </view>
+        </block>
+</view>
+</scroll-view>

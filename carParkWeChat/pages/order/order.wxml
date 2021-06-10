@@ -1,0 +1,35 @@
+<block wx:if="{{list.length!= 0}}">
+	<view bindtap="all" class="allOrder">
+	<text class="allOrder-left">我的订单</text>
+</view>
+</block>
+<block wx:if="{{list.length == 0}}">
+    <view class="screen"> 暂无订单记录 </view>
+</block>
+
+<view wx:for="{{list}}" wx:key="list"> 
+  <view class="orderDetails">
+	<view class="orderListDetails">
+		<!-- <view class="productImg">
+			<image src="{{item.ppUrl}}"></image>
+		</view> -->
+		<text class="iconfont icon-gengduo"></text>
+		<view class="productInfo">
+			<view class="productOwner">车位业主：{{item.rentName}}</view>
+			<view class="productTitle">订单编号：{{item.id}}</view>
+			<text class="productPrice">下单时间：{{item.createTime}}</text>
+			<!-- <text class="productQuantity">x{{item.num}}</text> -->
+		</view>
+	</view>
+	<view class="productCount">
+		<view>收费：￥<text>{{item.charge}}</text></view>
+	</view>
+</view>	
+
+</view>
+
+
+
+
+
+

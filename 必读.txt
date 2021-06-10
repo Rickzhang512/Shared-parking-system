@@ -1,0 +1,4 @@
+管理员登陆：http://localhost:8080/
+1.D盘根目录下新建my/upload文件夹
+2.在eclipse 引入的tomcat 的Host 中加入
+<Context crossContext="true" docBase="D:\my\upload\" path="/upload" reloadable="true"/>

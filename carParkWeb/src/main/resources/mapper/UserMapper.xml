@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.mapper.UserMapper">
+
+   <insert id="insertUser">
+       insert into user(uid,name,gender,phone_number,pwd)
+       values
+       (#{uid},#{name},#{gender},#{phone_number},#{pwd})
+   </insert>
+    <select id="findAllUserByPage" resultType="com.park.pojo.User">
+      select * from user limit #{satrt},#{end}
+    </select>
+    <select id="findUidByPNumAndPwd" resultType="String">
+        select uid
+        from user
+        where phone_number =#{phone_number} and pwd = #{pwd}
+    </select>
+    
+    <select id="findAllUser" resultType="com.park.pojo.User">
+        select * from user
+    </select>
+
+	<select id="findUserByUid" resultType="com.park.pojo.User">
+      select * from user
+      where uid = #{uid}
+    </select>
+
+    <delete id="deleteUsers" >
+      delete from user
+      where uid = #{uid}
+    </delete>
+</mapper>

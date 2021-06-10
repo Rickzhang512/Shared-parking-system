@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.mapper.SpotMapper">
+    <insert id="insertSpot" >
+      insert into spot (id,parkName,parkLocation,parkNum)
+      values (#{id},#{parkName},#{parkLocation},#{parkNum})
+    </insert>
+
+    <delete id="deleteSpot" >
+      delete from spot
+      where parkNum = #{parkNum} and id=#{id}
+    </delete>
+
+    <update id="updateSpot" >
+        update Spot
+        <trim prefix="set" suffixOverrides=",">
+            <if test="id!=null">id=#{id},</if>
+            <if test="parkName!=null">parkName=#{parkName},</if>
+            <if test="parkLocation!=null">parkLocation=#{parkLocation},</if>
+            <if test="parkNum!=null">parkNumber=#{parkNum},</if>
+        </trim>
+        where id = #{id} and parkNum= #{parkNum}
+    </update>
+    <select id="findSpot" resultType="com.park.pojo.Spot">
+      select id,parkName,parkLocation,parkNum from spot where id=#{id} and parkNum=#{parkNum}
+    </select>
+
+
+
+
+
+
+
+</mapper>

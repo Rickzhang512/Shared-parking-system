@@ -1,0 +1,57 @@
+<!--logs.wxml-->
+<view class='enter'>
+  <view class='avatar'>
+    <image src="{{userInfo.avatarUrl}}" />
+  </view>
+  <view class='info'>
+    <view class='name'>{{username}}</view>
+  </view>
+  <!-- <view class='money'>
+    <view class='name'>余额:¥ {{money}}</view>
+  </view> -->
+</view>
+<view class="main">  
+    <view class="my-items my-info">
+      <text class="iconfont icon-fangke"></text>
+      <navigator url="../rege_login/rege_login"><text class="word">注册/登录</text></navigator>
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+    <view class="my-items my-suggests" style="display:none">
+      <text class="iconfont icon-tousu" ></text>
+      <navigator url="../my_reserve/my_reserve" ><text class="word">车位预约</text></navigator>
+      <text class="iconfont icon-jiantou" ></text>
+    </view>
+    
+    <view class="my-items my-suggests">
+      <text class="iconfont icon-fangzi"></text>
+      <navigator url="../my_rent/my_rent"><text class="word">我发布的车位</text></navigator>
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+    <!-- <view class="my-items my-suggests">
+      <text class="iconfont icon-gonggao"></text>
+      <navigator url="../my_order/my_order"><text class="word">我的租用订单</text></navigator>
+      <text class="iconfont icon-jiantou"></text>
+    </view> -->
+    <view class="my-items my-suggests">
+      <text class="iconfont icon-gonggao"></text>
+      <navigator url="../my_rent_order/my_rent_order"><text class="word">我的出租订单</text></navigator>
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+    <view class="my-items my-suggests">
+      <text class="iconfont icon-gonggao"></text>
+      <navigator url="../order/order"><text class="word">我的租用订单</text></navigator>
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+    <view class="my-items my-suggests">
+      <text class="iconfont icon-weixiu"></text>
+      <navigator url="../my_record/my_record"><text class="word">我的停车记录</text></navigator>
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+  <view class="my-items contact-service">
+    <text class="iconfont icon-jiaofei"></text>
+    <navigator url="../my_payments/my_payments"><text class="word">车库缴费</text></navigator>
+    <text class="iconfont icon-jiantou"></text>
+  </view>
+
+</view>
+

@@ -1,0 +1,42 @@
+<scroll-view  scroll-y="true"  class="page-body" >
+  <!--list-->
+  <view class="nav_section">
+        <block wx:for="{{list}}" wx:if="{{list.length != 0}}">
+            <view class="nav_section_items" >
+                <!--content-->
+                <view class="section_cont">
+                    <view class="section_cont_price">
+                        <text>开始时间：{{item.parkStartTime}}</text>
+                    </view>
+                    <view class="section_cont_price">
+                        结束时间：{{item.parkEndTime}}
+                    </view>
+                    <view class="section_cont_price">
+                        <text>车位所在地址：{{item.parkAddress}}</text>
+                    </view>
+                    <view class="section_cont_price">
+                        <text>车位号码：{{item.parkNum}}</text>
+                    </view>
+                    <view class="section_cont_price">
+                        <text>租金/天：{{item.parkRentMoney}}</text>
+                    </view>
+                    <view class="section_cont_price">
+                        <text>业主姓名：{{item.parkUserName}}</text>
+                    </view>
+                    <view class="section_cont_price">
+                        <text>联系方式：{{item.parkPhone}}</text>
+                    </view>
+                    <view class="section_cont_price">
+                        车位照片：
+                        <image src="{{item.park_img}}" style="width: 120px;height: 80px;display: inline-block;overflow: left;"/>
+                    </view>
+                    <button form-type="submit" bindtap="addButton" data-id="{{item.id}}"> 立即预约 </button>
+                </view>
+            </view>
+
+        </block>
+        <block wx:if="{{list.length == 0}}">
+            <view class="screen"> 暂无待出租记录 </view>
+        </block>
+</view>
+</scroll-view>

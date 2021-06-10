@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.mapper.ParkMapper">
+
+    <select id="findAllPark" resultType="com.park.pojo.Park">
+      select * from park
+    </select>
+
+    <select id="findAllParkByPage" resultType="com.park.pojo.Park">
+      select * from park limit #{satrt},#{end}
+    </select>
+
+    <select id="findParkById" resultType="com.park.pojo.Park">
+      select id,parkName,parkLocation,parkNumber,feeScale,userInfo from park where id=#{id}
+    </select>
+    <select id="findParkByParkName" resultType="com.park.pojo.Park">
+      select id,parkName,parkLocation,parkNumber,feeScale,userInfo from park where parkName like concat('%',#{parkName},'%')
+    </select>
+    <insert id="insertPark" >
+      insert into park (parkName,parkLocation,parkNumber,feeScale,userInfo)
+      values (#{parkName},#{parkLocation},#{parkNumber},#{feeScale},#{userInfo})
+    </insert>
+
+    <delete id="deleteParks" >
+      delete from park
+      where id = #{id}
+    </delete>
+
+    <update id="updatePark" >
+     update park
+     <trim prefix="set" suffixOverrides=",">
+         <if test="parkName!=null">parkName=#{parkName},</if>
+         <if test="parkLocation!=null">parkLocation=#{parkLocation},</if>
+         <if test="parkNumber!=null">parkNumber=#{parkNumber},</if>
+         <if test="feeScale!=null">feeScale=#{feeScale},</if>
+         <if test="userInfo!=null">userInfo=#{userInfo},</if>
+     </trim>
+        where id = #{id}
+    </update>
+
+
+</mapper>

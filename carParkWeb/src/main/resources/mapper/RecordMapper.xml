@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.park.mapper.RecordMapper">
+		 <resultMap type="com.park.pojo.Record" id="RecordMap">
+			<id property="id" column="id"/>
+			<result property="parkName" column="parkName"/>
+			<result property="location" column="location"/>
+			<result property="userName" column="userName"/>
+			<result property="inTime" column="inTime"/>
+			<result property="outTime" column="outTime"/>
+			<result property="isCharge" column="isCharge"/>
+			<result property="charge" column="charge"/>
+		</resultMap>
+	<!--新增-->
+	<insert id="addRecord" parameterType="com.park.pojo.Record" >
+		insert into record
+		(parkName,location,userName,inTime,outTime,isCharge,charge)
+		values
+		(#{parkName},#{location},#{userName},#{inTime},#{outTime},#{isCharge},#{charge})
+	</insert>
+
+	<select id="findAllRecordByPage" resultType="com.park.pojo.Record">
+      select * from record limit #{satrt},#{end}
+    </select>
+	<!--根据id修改  -->
+	<update id="updateRecord" parameterType="com.park.pojo.Record" >
+		update record set 
+		<if test="parkName != null and parkName != '' ">
+			parkName =#{parkName},
+		</if>
+		<if test="location != null and location != '' ">
+			location=#{location},
+		</if>
+		<if test="userName != null and userName != '' ">
+			userName =#{userName},
+		</if>
+		<if test="inTime != null and inTime != '' ">
+			inTime =#{inTime},
+		</if>
+		
+		<if test="outTime != null and outTime != '' ">
+			outTime=#{outTime},
+		</if>
+		<if test="isCharge != null and isCharge != '' ">
+			isCharge =#{isCharge},
+		</if>
+		<if test="charge != null and charge != '' ">
+			charge =#{charge}
+		</if>
+		WHERE id =#{id}
+	</update>
+	
+	<select id="queryAll"  resultMap="RecordMap">
+		select id,parkName,location,userName,inTime,outTime,isCharge,charge from record
+	</select>
+	
+	<!--根据id删除  -->
+	<delete id="deleteRecord" parameterType="java.lang.Integer">
+		delete from record where id=#{id}
+	</delete>
+	
+	<select id="queryRecordById" parameterType="java.lang.Integer"  resultMap="RecordMap">
+		select id,parkName,location,userName,inTime,outTime,isCharge,charge from record where id=#{id}
+	</select>
+	
+	<select id="queryRecordByUserName" parameterType="com.park.pojo.Record" resultMap="RecordMap">
+		select id,parkName,location,userName,inTime,outTime,isCharge,charge from record where userName=#{userName} and isCharge=#{isCharge}
+	</select>
+</mapper>

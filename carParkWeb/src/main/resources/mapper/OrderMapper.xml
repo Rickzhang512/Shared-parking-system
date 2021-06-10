@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.mapper.OrderMapper">
+
+    <select id="findAllOrder" resultType="com.park.pojo.Order">
+      select * from orders
+    </select>
+
+    <select id="findAllOrderByPage" resultType="com.park.pojo.Order">
+      select * from orders limit #{satrt},#{end}
+    </select>
+
+    <select id="findOrderById" resultType="com.park.pojo.Order">
+      select id,rentId,uid,createTime,charge from order where id=#{id}
+    </select>
+
+    <insert id="insertOrder" >
+      insert into orders (rentId,uid,createTime,charge) values (#{rentId},#{uid},#{createTime},#{charge})
+    </insert>
+
+    <delete id="deleteOrders" >
+      delete from orders where id = #{id}
+    </delete>
+
+
+    <select id="findOrderByUid" resultType="com.park.pojo.Order">
+      select o.id,o.rentId,o.uid,o.createTime,o.charge,r.parkAddress as parkName,r.parkUserName as rentName from orders o,rent r where o.uid=#{uid} and o.rentId = r.id
+    </select>
+
+    <select id="getRentOrderByUid" resultType="com.park.pojo.Order">
+select o.id,o.rentId,o.uid,u.name,o.createTime,o.charge,r.parkAddress as parkName,r.parkUserName as rentName,r.parkStartTime as startTime,r.parkEndTime as endTime from orders o,rent r,user u where r.uid=#{uid} and o.rentId = r.id and u.uid=o.uid     </select>
+
+</mapper>

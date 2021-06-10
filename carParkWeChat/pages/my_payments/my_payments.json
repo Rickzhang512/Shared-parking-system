@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "我的待缴费",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+}

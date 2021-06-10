@@ -1,0 +1,93 @@
+<form bindsubmit="submitCarInfo">
+<view class="weui-cells__title">请填写车位信息</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">出租开始时间</view>
+        </view>
+        <view class="weui-cell__bd">
+					<picker mode="date" value="{{date1}}" start="2015" end="2037" bindchange="bindDateChange">
+                <view class="weui-input" name="parkStartTime">{{date1}}</view>
+            </picker>
+        </view>
+		</view>
+		<view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">出租结束时间</view>
+        </view>
+        <view class="weui-cell__bd">
+					<picker mode="date" value="{{date2}}" start="2015" end="2037" bindchange="bindDateChange2">
+                <view class="weui-input" name="parkEndTime">{{date2}}</view>
+            </picker>
+        </view>
+		</view>
+		
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">出租地址</view>
+        </view>
+        <view class="weui-cell__bd">
+					<input class="weui-input" name="parkAddress" placeholder="请输入出租地址" />
+        </view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">车位号码</view>
+        </view>
+        <view class="weui-cell__bd">
+					<input class="weui-input" name="parkNum" placeholder="请输入车位号码" />
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">日租金</view>
+        </view>
+        <view class="weui-cell__bd">
+					<input class="weui-input" name="parkRentMoney" placeholder="请输入日租金" />
+        </view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">真实姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+					<input class="weui-input" name="parkUserName" placeholder="请输入姓名" />
+        </view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">联系方式</view>
+        </view>
+        <view class="weui-cell__bd">
+					<input class="weui-input" name="parkPhone" placeholder="请输入联系方式" />
+        </view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">业主说明</view>
+        </view>
+        <view class="weui-cell__bd">
+					<input class="weui-input" name="parkYz" placeholder="请输入业主说明" />
+        </view>
+		</view>
+	
+    <view class="suggest-camera-area">
+						<text class="word">车位照片</text>
+            <view class="camera {{num == 0 ? 'hide':''}}" bindtap="chooseImg">
+              <text class="iconfont icon-camera"></text>
+            </view>
+            <block wx:for="{{imageUrl}}">
+              <view class="camera {{num == 0 ? 'show':'hide'}}">    
+                <image data-index="{{index}}" style="width: 140rpx; height: 140rpx; background-color: #eeeeee" src="{{item}} " bindtap="preImage"  mode="aspectFill" name="park_img"></image>
+                <text data-index="{{index}}" class="close iconfont icon-close" bindtap="removeImage"></text>
+              </view>
+            </block>
+            <view class="camera add {{addNum == 0 ? 'show':'hide'}}" bindtap="chooseImg">
+              <text class="iconfont icon-jia"></text>
+            </view>
+        </view>
+</view>
+<view class="weui-btn-area">
+    <button class="weui-btn" form-type="submit">提交</button>
+</view>
+</form>

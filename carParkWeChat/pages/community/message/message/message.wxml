@@ -1,0 +1,9 @@
+<view class="message-title">主题：{{title}}</view>
+<view class="message-date-author">
+    <view class="message-date">发布时间：{{time}}</view>
+    <view class="message-author">作者：{{author}}</view>
+</view>
+<view class="message-content">
+    <image src="{{img}}"></image>
+    <text>{{content}}</text>
+</view>

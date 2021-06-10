@@ -1,0 +1,63 @@
+<view class='shopDetail-box'>
+	<view class='shopDetail-box'>
+		<view class="tab-left">
+			<view class="{{tabArr.curHdIndex=='1'? 'active' : ''}}" id="1" data-id="1" bindtap="tab">注册</view>
+			<view class="{{tabArr.curHdIndex=='2'? 'active' : ''}}" id="2" data-id="2" bindtap="tab">登录</view>
+		</view>
+		<view class="tab-right">
+			<view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+			</view>
+			<view class="right-item {{tabArr.curBdIndex=='2'? 'active' : ''}}">
+			</view>
+		</view>
+	</view>
+	<view class="tab-right">
+		<view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+			<form bindsubmit="RegisterInfo">
+				<view class="main">
+					<view class="profile-items">
+						<text class="word">用户名</text>
+						<input name="name" focus="true" />
+					</view>
+					<view class="profile-items gender">
+						<text class="word">性别</text>
+						<radio-group name="gender">
+							<label>
+								<radio color="#54afc5" value="男" />男</label>
+							<label>
+								<radio color="#54afc5" value="女" />女</label>
+						</radio-group>
+					</view>
+					
+					<view class="profile-items">
+						<text class="word">手机号</text>
+						<input name="phone_number" maxlength="11" type="number" />
+					</view>
+					<view class="profile-items">
+						<text class="word">密码</text>
+						<input name="pwd" maxlength="11" />
+					</view>
+				</view>
+				<button form-type="submit"> 注册 </button>
+			</form>
+		</view>
+		<view class="right-item {{tabArr.curBdIndex=='2'? 'active' : ''}}">
+			<form bindsubmit="UserLogin">
+				<view class="main">
+					<view class="profile-items">
+						<text class="word">手机号</text>
+						<input name="phone_number"  maxlength="11" placeholder="请输入注册手机号"type="number" style='font-size:34rpx'/>
+					</view>
+					<view class='parentstyle '>
+    					<view class='profile-items'>
+							<text class="word">密码</text> 
+							<input name="pwd"  bindinput="inputPwd" password='{{passwordType}}'  maxlength="11" placeholder="请输入密码" style='font-size:34rpx'></input>
+      						<image src='{{defaultType? "../../images/eye_unsee.png": "../../images/eye_see.png"}}' class='imageStyle' bindtap='eyeStatus'></image>
+    					</view>
+  					</view>
+				</view>
+				<button form-type="submit"> 登录 </button>
+			</form>
+		</view>
+	</view>
+</view>

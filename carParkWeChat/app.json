@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/phone_number/phone_number",
+    "pages/my/my",
+    "pages/my_payments/my_payments",
+    "pages/rege_login/rege_login",
+    "pages/ad/ad",
+    "pages/park/park",
+    "pages/rent/rent",
+    "pages/community/message/message/message"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#87CEFA",
+    "navigationBarTitleText": "车位共享系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "车库停车",
+        "iconPath": "images/park.png",
+        "selectedIconPath": "images/park1.png"
+      },
+      {
+        "pagePath": "pages/park/park",
+        "text": "租用车位",
+        "iconPath": "images/appoint.png",
+        "selectedIconPath": "images/appoint1.png"
+      },
+      {
+        "pagePath": "pages/rent/rent",
+        "text": "发布",
+        "iconPath": "images/4.png",
+        "selectedIconPath": "images/5.png"
+      },
+      
+      {
+        "pagePath": "pages/ad/ad",
+        "text": "公告",
+        "iconPath": "images/announce.png",
+        "selectedIconPath": "images/announce1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my2.png",
+        "selectedIconPath": "images/my.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

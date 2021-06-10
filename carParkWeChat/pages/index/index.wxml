@@ -1,0 +1,32 @@
+<view class='page_row' >  
+      <view class="search">  
+        <view class="df search_arr">  
+          <icon class="searchcion" size='20' type='search'></icon>  
+            <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
+      </view>  
+      </view>  
+      <view class='sousuo' bindtap="suo">搜索</view>  
+    </view>
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:360rpx">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="notice-main">
+<view class="message-title">车位信息</view>
+<block wx:for="{{list}}" wx:key="list">
+    <navigator class="notice" 
+    url='../location/location?id={{item.id}}'>
+    <view class="message-title2">{{item.parkName}}</view>
+    <view class="message-date-author">
+    <view class="message-date">停车场地址：{{item.parkLocation}}</view>
+    <view class="message-author">停车位总数：{{item.parkNumber}}</view>
+    <view class="message-author">参考价位：{{item.feeScale}}元/小时</view>
+    </view>
+    <view class="divLine"></view>
+    </navigator>
+</block>
+</view>

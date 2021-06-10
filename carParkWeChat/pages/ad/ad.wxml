@@ -1,0 +1,13 @@
+<view class="notice-main">
+<view class="message-title">最新公告</view>
+<block wx:for="{{list}}" wx:key="list">
+    <navigator class="notice" 
+    url='../community/message/message/message?content={{item.content}}&title={{item.title}}&time={{item.time}}&author={{item.author}}&img={{item.img}}'>
+    <view class="message-title2">主题：{{item.title}}</view>
+    <view class="message-date-author">
+    <view class="message-date">发布时间：{{item.time}}</view>
+    <view class="message-author">作者：{{item.author}}</view>
+    </view>
+    </navigator>
+</block>
+</view>
